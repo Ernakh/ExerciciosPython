@@ -305,3 +305,65 @@ else:
 
     for sid, cnt in contagem_por_sensor.items():
         print(f"  - {sid}: {cnt}");
+
+
+#Exercício 1: Função Simples - Soma de Dois Números
+#Objetivo: Criar uma função que some dois números.
+#Descrição: Escreva uma função chamada somar que receba dois números como argumentos e retorne a soma deles.
+def somar(a, b):
+    return a + b
+
+resultado = somar(5, 7)
+print("A soma é:", resultado)
+
+#Exercício 2: Função com Condicional - Verificar Par ou Ímpar
+#Objetivo: Criar uma função que verifique se um número é par ou ímpar.
+#Descrição: Escreva uma função chamada verificar_par_impar que receba um número inteiro como argumento e retorne a string "Par" se o número for par, e "Ímpar" se for ímpar.
+def verificar_par_impar(numero):
+    if numero % 2 == 0:
+        return "Par"
+    else:
+        return "Ímpar"
+
+print(verificar_par_impar(10)) 
+print(verificar_par_impar(7))
+
+#Exercício 3: Leitura de Arquivo - Exibir Conteúdo
+#Objetivo: Ler um arquivo de texto e exibir seu conteúdo na tela.
+#Descrição: Crie um arquivo de texto simples (por exemplo, conteudo.txt). Escreva um código que leia este arquivo linha por linha e imprima cada linha no console.
+with open("conteudo.txt", "w", encoding="utf-8") as f:
+    f.write("Primeira linha\n")
+    f.write("Segunda linha\n")
+    f.write("Terceira linha\n")
+
+with open("conteudo.txt", "r", encoding="utf-8") as f:
+    for linha in f:
+        print(linha.strip())
+
+#Exercício 4: Escrita em Arquivo - Diário Simples
+#Objetivo: Permitir que o usuário escreva entradas em um arquivo de diário.
+#Descrição: Escreva um código que peça ao usuário para digitar uma entrada de diário. A entrada deve ser salva em um arquivo chamado diario.txt, adicionando a nova entrada ao final do arquivo a cada vez que o código for executado. Adicione uma quebra de linha após cada entrada.
+
+entrada = input("Digite sua entrada de diário: ")
+
+with open("diario.txt", "a", encoding="utf-8") as f:
+    f.write(entrada + "\n")
+
+print("Entrada adicionada ao diário com sucesso!")
+
+with open("diario.txt", "r", encoding="utf-8") as f:
+    for linha in f:
+        print(linha.strip())
+
+#Exercício 5: Combinando Funções e Arquivos - Contador de Linhas de Arquivo
+#Objetivo: Criar uma função que conte o número de linhas em um arquivo.
+#Descrição: Escreva uma função chamada contar_linhas que receba o nome de um arquivo como argumento e retorne o número total de linhas neste arquivo. Use esta função para contar as linhas de um arquivo de exemplo.
+def contar_linhas(nome_arquivo):
+    with open(nome_arquivo, "r", encoding="utf-8") as f:
+        return sum(1 for _ in f)
+
+arquivo_exemplo = "diario.txt"
+
+qtd = contar_linhas(arquivo_exemplo)
+print(f"O arquivo '{arquivo_exemplo}' possui {qtd} linhas.")
+
