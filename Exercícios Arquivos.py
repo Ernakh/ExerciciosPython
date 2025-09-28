@@ -21,6 +21,11 @@ par_ou_impar_arquivo(10)
 
 print("--------------------------------------------------")
 
+#Exercício 2
+#Crie uma função Python chamada somar_numeros_arquivo que receba dois argumentos: o nome de um arquivo de texto de entrada e o nome de um arquivo de texto de saída. 
+#O arquivo de entrada conterá números, um por linha. A função deve ler esses números, calcular a soma deles e escrever o resultado da soma em uma nova linha no arquivo de saída. 
+#A função deve tratar possíveis erros, como o arquivo de entrada não ser encontrado ou linhas que não contenham números válidos.
+
 ARQEntrada = Path("C:\\Users\\fabri\\OneDrive\\Cursos\\Especialização em Inteligência Artificial e Machine Learning\\1 - Algoritmos e Programação com Python\\")
 
 def somar_numeros_arquivo(arquivo_entrada: str, arquivo_saida: str):
