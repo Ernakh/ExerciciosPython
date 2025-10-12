@@ -380,7 +380,7 @@ def gerar_relatorio(Obras: List[Obra]):
         
         anos_count = {}
 
-        for f in Filmes:                     # se quiser contar séries também, troque por 'Obras'
+        for f in Filmes:
             ano = f.get_ano()
             if ano is None:
                 continue
@@ -468,4 +468,5 @@ def gerar_relatorio(Obras: List[Obra]):
     
 Obras = []
 Obras = abrir_filmes_disney()
+
 gerar_relatorio(Obras)
