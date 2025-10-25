@@ -444,11 +444,11 @@ def gerar_relatorio(Obras: List[Obra]):
             if not titulo or ano is None:
                 continue
 
-        #titulo = " ".join(titulo.split()).casefold()
+            #titulo = " ".join(titulo.split()).casefold()
 
-        if titulo not in titulosAnos:
-            titulosAnos[titulo] = {"titulo": titulo, "anos": set()}
-        titulosAnos[titulo]["anos"].add(ano)
+            if titulo not in titulosAnos:
+                titulosAnos[titulo] = {"titulo": titulo, "anos": set()}
+            titulosAnos[titulo]["anos"].add(ano)
         
         remakes = [(v["titulo"], sorted(v["anos"])) for v in titulosAnos.values() if len(v["anos"]) > 1]
 
@@ -470,3 +470,4 @@ Obras = []
 Obras = abrir_filmes_disney()
 
 gerar_relatorio(Obras)
+
